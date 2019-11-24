@@ -16,7 +16,6 @@
     model.$onInit = function() {
       fetchMovies($http).then(function(movies) {
         model.movies = movies;
-        console.log(model.movies);
       });
     };
 
