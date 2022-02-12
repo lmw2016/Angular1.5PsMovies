@@ -18,7 +18,7 @@
     "karma-jasmine": "0.3.8"
   },
   "scripts": {
-    "start": "http-server -o",
+    "start": "browser-sync start --server --index index.html",
     "test": "karma start karma.conf.js",
     "deploy": "gh-pages -d ."
   },
