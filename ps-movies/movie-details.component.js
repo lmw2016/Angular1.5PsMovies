@@ -3,11 +3,22 @@
 
   var module = angular.module("psMovies");
 
-  function controller() {
+  function fetchMovieById($http) {
+    return $http.get("/movies.json").then(function (res) {
+      return (res.data);
+    })
+  }
+  function controller($http) {
     var model = this;
 
     model.$routerOnActivate = function(next) {
       model.id = next.params.id;
+    };
+
+    model.$onInit = function () {
+      fetchMovieById($http).then(function (movies) {
+        model.movie = movies[model.id-1];
+      })
     };
 
     // model.goTo=function(id){
@@ -23,6 +34,6 @@
     //   },2000)
     // },
     controllerAs: "model",
-    controller: controller
+    controller:['$http', controller]
   });
 })();
