@@ -33,7 +33,25 @@
     //       return true;
     //   },2000)
     // },
+    $routeConfig: [
+      { path: "/overview", component: "movieOverview", name: "Overview" },
+      { path: "/cast", component: "movieCast", name: "Cast" },
+     {path:"/director",component:"movieDirector",name:"Director"}
+    ],
     controllerAs: "model",
     controller:['$http', controller]
   });
+
+  module.component("movieOverview", {
+    template: "This is the movie overview"
+  });
+
+   module.component("movieCast", {
+    template: "This is info about the cast"
+   });
+  
+   module.component("movieDirector", {
+    template: "This is info about the director"
+  });
+
 })();

@@ -1,7 +1,11 @@
 Details for movie: {{model.id}}
 <ul>
-    <li>Title: <a>{{model.movie.title}}</a></li>
-    <li>Director: <a>{{model.movie.length}}</a></li>
+    <li>Title: <a href="">{{model.movie.title}}</a></li>
+    <li>Length: <a href="">{{model.movie.length}}</a></li>
+    <li><a ng-link="['Overview']">Overview</a></li>
+    <li><a ng-link="['Cast']">Cast</a></li>
+    <li><a ng-link="['Director']">Director</a></li>
 </ul>
+<ng-outlet></ng-outlet>
 
 
